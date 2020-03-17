@@ -11,7 +11,7 @@ module DocxTemplater
 
     def generate_docx_file(file_name = "output_#{Time.now.strftime('%Y-%m-%d_%H%M')}.docx")
       File.open(file_name, 'w') do |f|
-        f.write(generate_docx_bytes.string)
+        f.write(generate_docx_bytes.string.force_encoding("UTF-8"))
       end
     end
 
